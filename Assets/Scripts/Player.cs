@@ -5,13 +5,13 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     private PlayerMove move;
-    //private CylinderCollider cylinderCollider;
+    private CylinderCollider cylinderCollider;
 
     // Start is called before the first frame update
     void Start()
     {
         move = GetComponent<PlayerMove>();
-        //cylinderCollider = GetComponent<CylinderCollider>();
+        cylinderCollider = GetComponent<CylinderCollider>();
     }
 
     // Update is called once per frame
@@ -34,9 +34,9 @@ public class Player : MonoBehaviour
             move.MoveLeft();
         }
 
-        //if(cylinderCollider.IsOnCollision())
-        //{
-        //    Debug.Log(cylinderCollider.GetNameHitObject());
-        //}
+        if (cylinderCollider.IsOnCollision())
+        {
+            Debug.Log(cylinderCollider.GetNameHitObject());
+        }
     }
 }
